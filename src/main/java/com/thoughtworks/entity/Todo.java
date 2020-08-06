@@ -12,15 +12,10 @@ public class Todo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String content;
-    private boolean status;
+    private boolean status = false;
 
-    public Todo() {
-    }
-
-    public Todo(int id, String content, boolean status) {
-        this.id = id;
+    public Todo(String content) {
         this.content = content;
-        this.status = status;
     }
 
     public int getId() {
