@@ -5,6 +5,7 @@ import com.thoughtworks.entity.Todo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class TodoService {
@@ -19,6 +20,12 @@ public class TodoService {
     }
 
     public Todo addOne(Todo todo) {
+        return todoRepository.save(todo);
+    }
+
+    public Todo updateById(int id, Todo updateTodo) {
+        Todo todo = todoRepository.findById(id).orElse(null);
+        todo.setStatus(updateTodo.getStatus());
         return todoRepository.save(todo);
     }
 }

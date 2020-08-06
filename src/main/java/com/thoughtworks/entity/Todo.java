@@ -34,7 +34,7 @@ public class Todo {
         this.content = content;
     }
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 
@@ -48,12 +48,12 @@ public class Todo {
         if (!(o instanceof Todo)) return false;
         Todo todo = (Todo) o;
         return getId() == todo.getId() &&
-                isStatus() == todo.isStatus() &&
+                getStatus() == todo.getStatus() &&
                 Objects.equals(getContent(), todo.getContent());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getContent(), isStatus());
+        return Objects.hash(getId(), getContent(), getStatus());
     }
 }

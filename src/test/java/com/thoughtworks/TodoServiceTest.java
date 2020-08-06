@@ -62,4 +62,22 @@ public class TodoServiceTest {
         assertNotNull(createdTodo);
         assertEquals(todo.getContent(), createdTodo.getContent());
     }
+
+    @Test
+    void should_return_todo_when_update_todo_given_todo() {
+        //given
+        Todo todo = new Todo("Hans");
+        when(todoRepository.save(todo)).thenReturn(todo);
+        Todo createdTodo = todoRepository.save(todo);
+        when(todoRepository.findById(createdTodo.getId())).thenReturn(java.util.Optional.of(createdTodo));
+
+        //when
+        createdTodo.setStatus(true);
+        Todo updatedTodo = todoService.updateById(createdTodo.getId(), createdTodo);
+
+        //then
+        assertNotNull(updatedTodo);
+        assertEquals(createdTodo, updatedTodo);
+        assertEquals(createdTodo.getStatus(), updatedTodo.getStatus());
+    }
 }
