@@ -1,6 +1,6 @@
 package com.thoughtworks.service;
 
-import com.thoughtworks.dao.TodoRepository;
+import com.thoughtworks.repository.TodoRepository;
 import com.thoughtworks.entity.Todo;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class TodoService {
         this.todoRepository = todoRepository;
     }
 
-    public List<Todo> findAllTodos(){
+    public List<Todo> findAll(){
         return todoRepository.findAll();
     }
 }
