@@ -1,7 +1,7 @@
 package com.thoughtworks;
 
 import com.thoughtworks.repository.TodoRepository;
-import com.thoughtworks.entity.Todo;
+import com.thoughtworks.model.Todo;
 import com.thoughtworks.service.TodoService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

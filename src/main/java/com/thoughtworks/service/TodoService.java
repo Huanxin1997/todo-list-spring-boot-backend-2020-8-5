@@ -1,11 +1,10 @@
 package com.thoughtworks.service;
 
 import com.thoughtworks.repository.TodoRepository;
-import com.thoughtworks.entity.Todo;
+import com.thoughtworks.model.Todo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class TodoService {
