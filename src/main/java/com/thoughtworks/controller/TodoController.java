@@ -1,5 +1,6 @@
 package com.thoughtworks.controller;
 
+import com.thoughtworks.exception.NotFoundException;
 import com.thoughtworks.model.Todo;
 import com.thoughtworks.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +29,13 @@ public class TodoController {
 
     @PutMapping(path = "/{id}")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public Todo updateTodo(@PathVariable Integer id, @RequestBody Todo todo) {
+    public Todo updateTodo(@PathVariable Integer id, @RequestBody Todo todo) throws NotFoundException {
         return todoService.updateById(id, todo);
     }
 
     @DeleteMapping(path = "/{id}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    public void deleteTodo(@PathVariable Integer id) {
+    public void deleteTodo(@PathVariable Integer id) throws NotFoundException {
         todoService.deleteById(id);
     }
 }
