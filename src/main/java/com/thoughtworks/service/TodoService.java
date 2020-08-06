@@ -28,4 +28,9 @@ public class TodoService {
         todo.setStatus(updateTodo.getStatus());
         return todoRepository.save(todo);
     }
+
+    public Boolean deleteById(int id) {
+        todoRepository.deleteById(id);
+        return todoRepository.findById(id).isPresent();
+    }
 }

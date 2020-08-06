@@ -14,8 +14,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -79,5 +78,19 @@ public class TodoServiceTest {
         assertNotNull(updatedTodo);
         assertEquals(createdTodo, updatedTodo);
         assertEquals(createdTodo.getStatus(), updatedTodo.getStatus());
+    }
+
+    @Test
+    void should_return_true_when_delete_todo_given_id() {
+        //given
+        Todo todo = new Todo("Hans");
+        when(todoRepository.save(todo)).thenReturn(todo);
+        Todo createdTodo = todoRepository.save(todo);
+
+        //when
+        Boolean result = todoService.deleteById(createdTodo.getId());
+
+        //then
+        assertTrue(result);
     }
 }
