@@ -12,6 +12,7 @@ public class Todo {
     private int id;
     private String content;
     private Boolean status = false;
+    private String createDate;
 
     public Todo() { }
 
@@ -39,7 +40,15 @@ public class Todo {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 }

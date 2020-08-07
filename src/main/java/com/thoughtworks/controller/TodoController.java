@@ -16,7 +16,7 @@ public class TodoController {
     private TodoService todoService;
 
     @GetMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
+    @ResponseStatus(code = HttpStatus.OK)
     public List<Todo> getAllTodos() {
         return todoService.findAll();
     }
@@ -28,7 +28,7 @@ public class TodoController {
     }
 
     @PutMapping(path = "/{id}")
-    @ResponseStatus(code = HttpStatus.CREATED)
+    @ResponseStatus(code = HttpStatus.OK)
     public Todo updateTodo(@PathVariable Integer id, @RequestBody Todo todo) throws NotFoundException {
         return todoService.updateById(id, todo);
     }

@@ -1,5 +1,6 @@
 package com.thoughtworks;
 
+import com.thoughtworks.exception.NotFoundException;
 import com.thoughtworks.repository.TodoRepository;
 import com.thoughtworks.model.Todo;
 import com.thoughtworks.service.TodoService;
@@ -63,7 +64,7 @@ public class TodoServiceTest {
     }
 
     @Test
-    void should_return_todo_when_update_todo_given_todo() {
+    void should_return_todo_when_update_todo_given_todo() throws NotFoundException {
         //given
         Todo todo = new Todo("Hans");
         when(todoRepository.save(todo)).thenReturn(todo);
@@ -81,7 +82,7 @@ public class TodoServiceTest {
     }
 
     @Test
-    void should_return_true_when_delete_todo_given_id() {
+    void should_return_true_when_delete_todo_given_id() throws NotFoundException {
         //given
         Todo todo = new Todo("Hans");
         when(todoRepository.save(todo)).thenReturn(todo);

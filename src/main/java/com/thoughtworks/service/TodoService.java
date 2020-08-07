@@ -6,6 +6,8 @@ import com.thoughtworks.repository.TodoRepository;
 import com.thoughtworks.model.Todo;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -21,6 +23,9 @@ public class TodoService {
     }
 
     public Todo addOne(Todo todo) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+        Date createDate = new Date();
+        todo.setCreateDate(sdf.format(createDate));
         return todoRepository.save(todo);
     }
 
