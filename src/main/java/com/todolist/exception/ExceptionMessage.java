@@ -1,4 +1,4 @@
-package com.thoughtworks.exception;
+package com.todolist.exception;
 
 public enum ExceptionMessage {
     NOT_FOUND_MESSAGE("Not Found this TODO");

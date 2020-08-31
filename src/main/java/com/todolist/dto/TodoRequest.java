@@ -1,4 +1,4 @@
-package com.thoughtworks.dto;
+package com.todolist.dto;
 
 public class TodoRequest {
     private int id;

@@ -1,8 +1,8 @@
-package com.thoughtworks.mapper;
+package com.todolist.mapper;
 
-import com.thoughtworks.dto.TodoRequest;
-import com.thoughtworks.dto.TodoResponse;
-import com.thoughtworks.model.Todo;
+import com.todolist.dto.TodoRequest;
+import com.todolist.dto.TodoResponse;
+import com.todolist.model.Todo;
 import org.springframework.beans.BeanUtils;
 
 public class TodoMapper {
